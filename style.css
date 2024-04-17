@@ -1,0 +1,371 @@
+:root{
+--bg: #1f1f38;
+--bg-variant: #2c2c6c;
+--primary: #4db5ff;
+--primary-variant: rgba(77,181,255,0.4);
+--color-white: #fff;
+--color-light: rgba(255,255,255,0.6);
+--animate-color: #2c4c9c;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins';
+  color: var(--color-white);
+  outline: none;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  background: var(--bg);
+}
+
+canvas {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  z-index: 0;
+}
+
+.navigation{
+  width: 100%;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  z-index: 2;
+}
+.navTitle{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.navLogo{
+  width: 3.6rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1.5px solid var(--primary);
+  overflow: hidden;
+}
+.navLogo img{
+  width: 100%;
+  height: 100%;
+}
+.menuBtn{
+  display: none;
+}
+.menuBtn i{
+  font-size: 1.6rem;
+}
+.navigation .navLinks{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.navLinks li{
+  font-size: 1.4rem;
+}
+.navLinks .tools{
+  border-radius: 5px;
+  
+}
+.navLinks li:hover{
+  color: var(--primary);
+}
+
+
+
+
+.container{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.homepage{
+  width: 100%;
+  height: 100vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 0;
+}
+.homepage .content{
+  max-width: 45rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.homepage h1{
+  width: 100%;
+  font-weight: 500;
+  font-family: 'Carter One', Sans-Serif;
+}
+.homepage h1 span{
+  font-weight: 500;
+  color: var(--primary);
+  font-family: 'Carter One', Sans-Serif;
+
+}
+.homepage h4{
+  width: 100%;
+  font-weight: 400;
+  padding: 0.5rem 0 0.8rem;
+}
+.primaryBtn{
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  border: 0;
+  background: var(--primary);
+}
+
+
+.about{
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cleo, .imageGen, .toolsContainer{
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 7rem 1fr;
+  
+}
+.cleoBody{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+.cleoBody .alignTitle, .CBtools .alignTitle{
+  width: 100%;
+  padding: 0 1rem 0.5rem;
+}
+.alignTitle h3{
+  width: 100%;
+  padding: 0.5rem 0;
+  border-radius: 5px;
+  background: var(--primary);
+}
+.cleoContents{
+  width: 100%;
+  padding: 0 1rem 1rem;
+  position: relative;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+.red{
+  width: 100%;
+}
+.gridImage{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  overflow: hidden;
+}
+.gridImage img{
+  width: 100%;
+  max-width: 50rem;
+}
+.cleoResponse, .promptCleo{
+  width: max-content;
+  min-width: 10rem;
+  max-width: 50rem;
+  margin-top: 10px;
+  padding: 0.6rem 0.7rem;
+  border: 0;
+  border-radius: 7px;
+  text-align: left;
+  background: var(--primary-variant);
+}
+.cleoResponse pre{
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.alignPrompt{
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+.copyDetails{
+  width: 100%;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.copyDetails p{
+  font-size: 14px;
+}
+.copy{
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.inputField{
+  width: 100%;
+  padding: 1rem 0.7rem 2rem;
+  display: grid;
+  gap: 6px;
+  grid-template-columns: 1fr 8rem;
+  background: transparent;
+  backdrop-filter: blur(1rem);
+}
+.inputField input{
+  width: 100%;
+  padding: 1rem;
+  color: #000;
+  border: 0;
+  border-radius: 5px;
+  background: var(--color-white);
+}
+.inputField button{
+  font-weight: 600;
+  color: var(--color-white);
+  border: 0;
+  border-radius: 5px;
+  background: var(--primary);
+}
+.sendPrompt i{
+  font-size: 19px;
+}
+
+.toolsContainer{
+  position: relative;
+  z-index: 1;
+}
+.toolkit{
+  width: 100%;
+  padding: 0 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.toolkit .tool{
+  width: 100%;
+  border: 1px solid rgba(77,181,255,0.4);
+  border-radius: 5px;
+  padding: 0.8rem 0;
+  animation: colorWave 5s infinite;
+  background: linear-gradient(to right, var(--bg), var(--animate-color), var(--bg));
+  background-size: 500% 100%;
+}
+.toolkit .tool:hover{
+  background: var(--primary);
+}
+
+  @keyframes colorWave {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
+
+
+@media screen and (max-width: 900px) {
+  .navigation{
+    padding: 0.7rem;
+  }
+  .navTitle{
+    gap: 0.5rem;
+  }
+  .navTitle h1{
+    font-size: 1.3rem;
+  }
+  .navLogo{
+    width: 2.1rem;
+  }
+  .homepage h1{
+    font-size: 1.8rem;
+  }
+  .navigation .menuBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .navigation .navLinks{
+    width: 50%;
+    height: 0;
+    border-radius: 10px;
+    display: inline-block;
+    position: absolute;
+    bottom: 0rem;
+    right: 0.4rem;
+    transform: translateY(100%);
+    background: transparent;
+    backdrop-filter: blur(2.8rem);
+    box-shadow: 0 0 3px var(--primary);
+    overflow: auto;
+    transition: 0.6s;
+  }
+  .navLinks li{
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border-radius: 5px;
+    margin: 8px 8px 0.8rem;
+  }
+  .navLinks .tools{
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin: 8px;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    animation: colorWave 5s infinite;
+  background: linear-gradient(to right, var(--bg), var(--animate-color), var(--bg));
+  background-size: 500% 100%;
+  }
+
+  .navLinks li:hover{
+    color: var(--color-white);
+    background: var(--primary);
+  }
+  
+  .cleo, .imageGen, .toolsContainer{
+    grid-template-rows: 56px 1fr;
+  }
+  .cleoContents{
+    padding: 0 1rem 1rem;
+  }
+  .cleoBody .alignTitle, .CBtools .alignTitle{
+    padding: 0 0.5rem 0.5rem;
+  }
+  .cleoResponse, .promptCleo{
+    max-width: 15rem;
+  }
+  .inputField{
+    grid-template-columns: 1fr 3.5rem;
+  }
+  .inputField input{
+    padding: 0.6rem;
+  }
+}
