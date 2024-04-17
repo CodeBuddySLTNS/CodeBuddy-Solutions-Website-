@@ -70,6 +70,18 @@
     </div>
   </div>
   <script>
+    const inputField = document.querySelector(".inputField");
+    const cleo = document.querySelector(".cleoContents");
+    
+    function changePadding(){
+      cleo.style.padding = `0 1rem ${inputField.offsetHeight + 4}px`;
+    }
+    changePadding();
+    window.addEventListener("resize", () => {
+      changePadding();
+    });
+    
+    
     const cleoContents = document.querySelector('.cleoContents');
     const prompt = document.querySelector('.prompt');
     const sendPrompt = document.querySelector('.sendPrompt');
