@@ -8,11 +8,7 @@
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   
-  <!-- Fonts used -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Edu+NSW+ACT+Foundation:wght@400..700&family=Protest+Revolution&family=Titan+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   
   <link rel="stylesheet" href="style.css">
   <title>CodeBuddy Solutions</title>
@@ -29,16 +25,19 @@
       <i class="fa-solid fa-bars menuIcon"></i>
     </div>
     <div class="navLinks">
-      <a href="#">
+      <a href="#" onclick="closeMenu()">
         <li>Home</li>
       </a>
-      <a href="#">
-        <li>About</li>
+      <a href="#services" onclick="closeMenu()">
+        <li>Services</li>
       </a>
-      <a href="#">
+      <a href="#" onclick="closeMenu()">
         <li>Projects</li>
       </a>
-      <a href="#">
+      <a href="#" class="testimonialsBtn" onclick="closeMenu()">
+        <li>Testimonials</li>
+      </a>
+      <a href="#" onclick="closeMenu()">
         <li>Contact</li>
       </a>
       <a href="tools.html">
@@ -47,17 +46,137 @@
     </div>
   </div>
   <div class="container">
+    <canvas></canvas>
     <div class="homepage">
-      <canvas></canvas>
       <div class="content">
         <h1>" TURN YOUR <span>IDEAS</span> INTO A REALITY. "</h1>
         <h4>We are always available for a freelance projects, feel free to reach out to us if you are looking for a developer, have a query, or simply want to connect.</h4>
         <button class="primaryBtn">Message Us!</button>
       </div>
     </div>
-    <div class="about">
-      <h1>About Us</h1>
+    <div class="sectionContainer aboutContainer">
+      <h3>Getting to know</h3>
+      <h2>About Us</h2>
+      <div class="description">
+        <p><span class="platformName">CodeBuddy Solutions</span> is a platform designed and maintained by a passionate web developer named <span class="devLink">Renz Cole</span> that offers a quality freelance services at a very affordable and negotiable prices.</p>
+        <p>We specialize in web development in both frontend and backend, creating a fully functional and visually appealing websites that not just meet but exceeds expectations.</p>
+        <p>We are also accepting commission projects related to our tech stacks.</p>
+        
+      </div>
     </div>
+    
+    <div id="services" class="sectionContainer servicesContainer">
+      <h3>Here are the</h3>
+      <h2>Services we offer</h2>
+      <div class="services">
+        <div class="service">
+          <img src="./images/responsive-design.png" class="serviceImg">
+          <span>Web Design</span>
+          Creating visually appealing websites.
+        </div>
+        <div class="service">
+          <img src="./images/coding.png" class="serviceImg">
+          <span>Web Development</span>
+          Building websites and web applications.
+        </div>
+        <div class="service">
+          <img src="./images/launching.png" class="serviceImg">
+          <span>Web Deployment</span>
+          Launching websites for online access.
+        </div>
+        <div class="service">
+          <img src="./images/web-maintenance.png" class="serviceImg">
+          <span>Web Maintenance</span>
+          Sustaining websites for optimal performance.
+        </div>
+      </div>
+    </div>
+    
+    <div id="technologies" class="sectionContainer technologiesContainer">
+      <h3>Explore the</h3>
+      <h2>Technologies we use</h2>
+      <div class="technologies">
+        <div class="programmingTech">
+          <p>Frontend and Backend</p>
+          <div class="techStacks">
+            <div class="tech">
+            <img class="techImg" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+              HTML5
+            </div>
+            <div class="tech">
+            <img class="techImg" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+              CSS3
+            </div>
+            <div class="tech">
+            <img class="techImg" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+              Javascript
+            </div>
+            <div class="tech">
+            <img class="techImg" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+              React
+            </div>
+            <div class="tech">
+            <i class="devicon-nodejs-plain-wordmark"></i>
+              Node
+            </div>
+            <div class="tech">
+            <i class="devicon-express-original"></i>
+              Express
+            </div>
+            <div class="tech">
+            <img class="techImg" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" />
+              MongoDB
+            </div>
+          </div>
+        </div>
+        <div class="programmingTech">
+          <p>Other Tools and Libraries</p>
+          <div class="techStacks">
+            <div class="tech">
+            <img class="techImg" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+              Git
+            </div>
+            <div class="tech">
+            <i class="devicon-github-original"></i>
+              Github
+            </div>
+            <div class="tech">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Termux.svg" class="techImg"/>
+              Termux
+            </div>
+            <div class="tech">
+              <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*6nhGYTC3JL0-gLk6pkjbPg.gif" style="background: #fff;padding: 5px" class="techImg"/>
+              Docx
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="projects" class="sectionContainer projectsContainer">
+      <h3>Passion crafted</h3>
+      <h2>Projects</h2>
+    </div>
+    
+    <div id="contacts" class="sectionContainer contactsContainer">
+      <h3>get in touch</h3>
+      <div class="contacts">
+        <p class="desc">What’s next? Feel free to reach out to us if you are looking for a developer or simply want to connect.</p>
+        <div class="contactInfo">
+          <div class="emailAddress">
+            <i class="fa-solid fa-envelope"></i>
+            <p>codebuddysolutions@gmail.com</p>
+            <i class="fa-solid fa-copy"></i>
+          </div>
+          <div class="phoneNumber">
+            <i class="fa-solid fa-phone"></i>
+            <p>09363926188</p>
+            <i class="fa-solid fa-copy"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    
   </div>
   <script src="script.js"></script>
   <script src="libraries/rymd/script.js"></script>

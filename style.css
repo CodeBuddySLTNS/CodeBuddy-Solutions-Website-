@@ -1,22 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Changa+One:ital@0;1&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root{
---bg: #1f1f38;
---bg-variant: #2c2c6c;
---primary: #4db5ff;
---primary-variant: rgba(77,181,255,0.4);
---color-white: #fff;
---color-light: rgba(255,255,255,0.6);
---animate-color: #2c4c9c;
+  --bg: #1f1f38;
+  --bgVariant: #2c2c6c;
+  --primary: #4db5ff;
+  --primaryVariant: rgba(77,181,255,0.4);
+  --colorWhite: #fff;
+  --colorWhiteLight: rgba(255,255,255,0.93);
+  --colorWhiteDark: rgba(255,255,255,0.6);
+  --animateColor: #2c4c9c;
+  
+  --smallScreen: 5%;
+  --mediumScreen: 10%;
+  --largeScreen: 20%;
 }
 
 *{
   padding: 0;
   margin: 0;
   font-family: 'Poppins';
-  color: var(--color-white);
+  color: var(--colorWhite);
   outline: none;
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
 }
 
 body{
@@ -32,18 +43,20 @@ canvas {
   width: 100%;
   height: 100vh;
   top: 0;
-  z-index: 0;
+  z-index: -100;
 }
 
 .navigation{
   width: 100%;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 2rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  top: 0px;
-  z-index: 2;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: var(--bg);
 }
 .navTitle{
   display: flex;
@@ -77,13 +90,23 @@ canvas {
 }
 .navLinks li{
   font-size: 1.4rem;
+  padding: 5px 10px;
 }
 .navLinks .tools{
   border-radius: 5px;
-  
+  color: var(--colorWhite);
+  animation: colorWave 5s infinite;
+  background: linear-gradient(to right, var(--bg), var(--animateColor), var(--bg));
+  background-size: 500% 100%;
+  box-shadow: 0 0 5px var(--primary);
 }
 .navLinks li:hover{
-  color: var(--primary);
+  border-radius: 5px;
+  color: var(--bg);
+  background: var(--primary);
+}
+.navLinks .testimonialsBtn{
+  display: none;
 }
 
 
@@ -104,8 +127,10 @@ canvas {
   align-items: center;
   position: relative;
   top: 0;
+  overflow: hidden;
 }
 .homepage .content{
+  width: 100%;
   max-width: 45rem;
   text-align: center;
   position: relative;
@@ -137,14 +162,184 @@ canvas {
 }
 
 
-.about{
+.sectionContainer{
   width: 100%;
-  text-align: center;
+  padding: 3.5rem var(--largeScreen) 2rem;
   position: relative;
-  z-index: 1;
+}
+.sectionContainer h2{
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--colorWhiteLight);
+}
+.sectionContainer h3{
+  text-align: center;
+  color: gray;
+  font-size: 1rem;
 }
 
-.cleo, .imageGen, .toolsContainer{
+
+
+.aboutContainer{
+  background: var(--bg);
+}
+.description p{
+  padding: 1rem 0 0;
+  color: var(--colorWhiteLight);
+}
+.description .platformName{
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--primary);
+}
+.description .devLink{
+  text-decoration: underline;
+  text-decoration-color: var(--primaryVariant);
+}
+
+
+
+
+.servicesContainer .services{
+  width: 100%;
+  padding: 1.2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1rem;
+}
+.services .service{
+  width: 100%;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: var(--bg);
+  box-shadow: 0 0 3.5px var(--primaryVariant);
+  transition: 0.8s;
+}
+.services .serviceImg{
+  width: 5rem;
+  aspect-ratio: 1/1;
+}
+.services .service span{
+  color: var(--primary);
+  font-weight: 500;
+}
+.services .service:hover{
+  background: var(--bgVariant);
+}
+
+
+
+
+.technologiesContainer{
+  background: var(--bg);
+}
+.technologies{
+  width: 100%;
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  gap: 1rem;
+}
+.technologies .programmingTech{
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: var(--bg);
+  box-shadow: 0 0 1px 1px var(--bgVariant);
+  overflow: hidden;
+
+}
+.programmingTech p{
+  font-weight: 500;
+  padding: 5px;
+  background: var(--bgVariant);
+}
+.programmingTech .techStacks{
+  padding: 10px 15px 15px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5.4rem, 1fr));
+  gap: 10px;
+  box-shadow: 0 0 3px var(--bgVariant);
+}
+.programmingTech .techStacks .tech{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  box-shadow: 0 0 3px var(--bgVariant);
+  transition: 0.55s;
+}
+.programmingTech .techStacks .tech .techImg{
+  width: 37px;
+  aspect-ratio: 1/1;
+  border-radius: 5px;
+}
+.programmingTech .techStacks i{
+  font-size: 2rem;
+}
+.programmingTech .techStacks .tech:hover{
+  transform: rotate(360deg);
+  background: var(--bgVariant);
+}
+
+
+
+.contactsContainer{
+  width: 100%;
+  padding: 1rem 0;
+}
+.contactsContainer .contacts .desc{
+  text-align: center;
+  font-size: 0.95rem;
+}
+.contacts .contactInfo{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+}
+.contacts .contactInfo div{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  border-radius: 5px;
+  background: rgba(200,200,200,0.3);
+  overflow: hidden;
+}
+.contacts .contactInfo i{
+  padding: 7px 10px;
+  background: gray;
+}
+.contacts .contactInfo div p{
+  width: 100%;
+  text-align: center;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+
+.cleo, .toolsContainer{
   width: 100%;
   height: 100vh;
   text-align: center;
@@ -177,19 +372,6 @@ canvas {
   overflow: auto;
   scroll-behavior: smooth;
 }
-.red{
-  width: 100%;
-}
-.gridImage{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  overflow: hidden;
-}
-.gridImage img{
-  width: 100%;
-  max-width: 50rem;
-}
 .cleoResponse, .promptCleo{
   width: max-content;
   min-width: 10rem;
@@ -199,7 +381,7 @@ canvas {
   border: 0;
   border-radius: 7px;
   text-align: left;
-  background: var(--primary-variant);
+  background: var(--primaryVariant);
 }
 .cleoResponse pre{
   white-space: pre-wrap;
@@ -242,11 +424,11 @@ canvas {
   color: #000;
   border: 0;
   border-radius: 5px;
-  background: var(--color-white);
+  background: var(--colorWhite);
 }
 .inputField button{
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--colorWhite);
   border: 0;
   border-radius: 5px;
   background: var(--primary);
@@ -272,14 +454,14 @@ canvas {
   border-radius: 5px;
   padding: 0.8rem 0;
   animation: colorWave 5s infinite;
-  background: linear-gradient(to right, var(--bg), var(--animate-color), var(--bg));
+  background: linear-gradient(to right, var(--bg), var(--animateColor), var(--bg));
   background-size: 500% 100%;
 }
 .toolkit .tool:hover{
-  background: var(--primary);
+  background: var(--animateColor);
 }
 
-  @keyframes colorWave {
+@keyframes colorWave {
     0% {
       background-position: 0 50%;
     }
@@ -293,6 +475,10 @@ canvas {
 
 
 @media screen and (max-width: 900px) {
+  .sectionContainer{
+    padding: 1.8rem var(--mediumScreen) 2rem;
+  }
+  
   .navigation{
     padding: 0.7rem;
   }
@@ -343,16 +529,19 @@ canvas {
     border: 1px solid var(--primary);
     color: var(--primary);
     animation: colorWave 5s infinite;
-  background: linear-gradient(to right, var(--bg), var(--animate-color), var(--bg));
-  background-size: 500% 100%;
+    background: linear-gradient(to right, var(--bg), var(--animateColor), var(--bg));
+    background-size: 500% 100%;
   }
-
   .navLinks li:hover{
-    color: var(--color-white);
+    color: var(--colorWhite);
     background: var(--primary);
   }
+  .navLinks .testimonialsBtn{
+    display: block;
+  }
   
-  .cleo, .imageGen, .toolsContainer{
+  
+  .cleo, .toolsContainer{
     grid-template-rows: 56px 1fr;
   }
   .cleoContents{
@@ -369,5 +558,12 @@ canvas {
   }
   .inputField input{
     padding: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .sectionContainer{
+    padding: 1.8rem var(--smallScreen) 2rem;
+
   }
 }

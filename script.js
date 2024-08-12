@@ -11,3 +11,9 @@ menuIcon.onclick = () => {
     menuIcon.classList.remove("fa-xmark");
   }
 }
+
+
+function copyToClipboard(e){
+  navigator.clipboard.writeText(e.parentElement.firstElementChild.innerText);
+  e.lastElementChild.lastElementChild.innerText = "copied";
+}
